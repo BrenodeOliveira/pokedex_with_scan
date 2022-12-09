@@ -7,11 +7,13 @@ import androidx.lifecycle.viewModelScope
 import br.com.heiderlopes.pokemonwstemplatev2.domain.model.Pokemon
 import br.com.heiderlopes.pokemonwstemplatev2.domain.model.ViewState
 import br.com.heiderlopes.pokemonwstemplatev2.domain.usecase.GetFirstGenerationPokemonsUseCase
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class ListPokemonsViewModel(
-    val getFirstGenerationPokemonsUseCase: GetFirstGenerationPokemonsUseCase
+    val getFirstGenerationPokemonsUseCase: GetFirstGenerationPokemonsUseCase,
+    private val dispatcher: CoroutineDispatcher = Dispatchers.IO
 ) : ViewModel() {
 
     private val _pokemonResult = MutableLiveData<ViewState<List<Pokemon>>>()
@@ -23,7 +25,7 @@ class ListPokemonsViewModel(
 
         _pokemonResult.postValue(ViewState.Loading)
 
-        viewModelScope.launch(Dispatchers.IO) {
+        viewModelScope.launch(dispatcher) {
             runCatching {
                 getFirstGenerationPokemonsUseCase()
             }.onSuccess {

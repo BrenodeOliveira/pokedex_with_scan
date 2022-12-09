@@ -3,10 +3,9 @@ package br.com.heiderlopes.pokemonwstemplatev2.presentation.listpokemons
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.GridLayoutManager
-import br.com.heiderlopes.pokemonwstemplatev2.R
 import br.com.heiderlopes.pokemonwstemplatev2.databinding.ActivityListPokemonsBinding
 import br.com.heiderlopes.pokemonwstemplatev2.domain.model.ViewState
 import br.com.heiderlopes.pokemonwstemplatev2.presentation.formpokemon.FormPokemonActivity
@@ -18,7 +17,7 @@ class ListPokemonsActivity : AppCompatActivity() {
 
     private val listPokemonsViewModel: ListPokemonsViewModel by viewModel()
 
-    val picasso: Picasso by inject()
+    private val picasso: Picasso by inject()
 
     private val viewBinding by lazy {
         ActivityListPokemonsBinding.inflate(layoutInflater)
@@ -35,7 +34,7 @@ class ListPokemonsActivity : AppCompatActivity() {
         listPokemonsViewModel.pokemonResult.observe(this) {
             when (it) {
                 is ViewState.Success -> {
-                    viewBinding.loading.containerLoading.visibility = View.GONE
+                    isContainerVisible(false)
                     viewBinding.rvPokemons.adapter = ListPokemonsAdapter(it.data, picasso) {
                         val intent = Intent(this, FormPokemonActivity::class.java)
                         intent.putExtra("POKEMON", it.number)
@@ -44,13 +43,17 @@ class ListPokemonsActivity : AppCompatActivity() {
                     viewBinding.rvPokemons.layoutManager = GridLayoutManager(this, 3)
                 }
                 is ViewState.Loading -> {
-                    viewBinding.loading.containerLoading.visibility = View.VISIBLE
+                    isContainerVisible(true)
                 }
                 is ViewState.Failure -> {
-                    viewBinding.loading.containerLoading.visibility = View.GONE
+                    isContainerVisible(false)
                     Toast.makeText(this, it.throwable.message, Toast.LENGTH_LONG).show()
                 }
             }
         }
+    }
+
+    private fun isContainerVisible(isVisible: Boolean) {
+        viewBinding.loading.containerLoading.isVisible = isVisible
     }
 }

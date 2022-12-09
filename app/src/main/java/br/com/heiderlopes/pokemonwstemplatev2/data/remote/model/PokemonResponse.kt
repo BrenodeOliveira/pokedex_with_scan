@@ -9,5 +9,5 @@ data class PokemonResponse(
     @SerializedName("ps") var ps: Int,
     @SerializedName("attack") var attack: Int,
     @SerializedName("defense") var defense: Int,
-    @SerializedName("velocity") var velocity: Int
+    @SerializedName("velocity") var velocity: Int,
 )
