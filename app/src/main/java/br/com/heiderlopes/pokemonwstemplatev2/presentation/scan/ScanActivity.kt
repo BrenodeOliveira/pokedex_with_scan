@@ -5,13 +5,11 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.Settings
 import android.view.View
 import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
-import br.com.heiderlopes.pokemonwstemplatev2.R
 import br.com.heiderlopes.pokemonwstemplatev2.databinding.ActivityScanBinding
 import br.com.heiderlopes.pokemonwstemplatev2.presentation.pokedex.PokedexActivity
 import com.google.zxing.Result
@@ -20,7 +18,7 @@ import me.dm7.barcodescanner.zxing.ZXingScannerView
 class ScanActivity : BaseScanActivity(),
     ZXingScannerView.ResultHandler {
 
-    override val baseScannerView: ZXingScannerView?
+    override val baseScannerView: ZXingScannerView
         get() = viewBinding.mScannerView
 
     private val viewBinding by lazy {
@@ -44,8 +42,11 @@ class ScanActivity : BaseScanActivity(),
 
     public override fun onResume() {
         super.onResume()
-        if (ContextCompat.checkSelfPermission(this,
-                Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
+        if (ContextCompat.checkSelfPermission(
+                this,
+                Manifest.permission.CAMERA
+            ) == PackageManager.PERMISSION_GRANTED
+        ) {
             viewBinding.permissions.containerPermission.visibility =
                 View.GONE
             viewBinding.mScannerView.setResultHandler(this)
