@@ -2,11 +2,12 @@ package br.com.heiderlopes.pokemonwstemplatev2.presentation.pokedex
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import br.com.heiderlopes.pokemonwstemplatev2.R
 import br.com.heiderlopes.pokemonwstemplatev2.databinding.ActivityPokedexBinding
 import br.com.heiderlopes.pokemonwstemplatev2.domain.model.Pokemon
 import br.com.heiderlopes.pokemonwstemplatev2.domain.model.ViewState
+import br.com.heiderlopes.pokemonwstemplatev2.presentation.utils.showToastLong
+import br.com.heiderlopes.pokemonwstemplatev2.utils.consts.Constants.POKEMON_KEY
 import com.squareup.picasso.Picasso
 import org.koin.android.ext.android.inject
 import org.koin.android.viewmodel.ext.android.viewModel
@@ -20,7 +21,7 @@ class PokedexActivity : AppCompatActivity() {
             layoutInflater
         )
     }
-    private val pokemonNumber by lazy { intent.getStringExtra("POKEMON") ?: "" }
+    private val pokemonNumber by lazy { intent.getStringExtra(POKEMON_KEY) ?: "" }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,10 +41,7 @@ class PokedexActivity : AppCompatActivity() {
                 is ViewState.Loading -> {
                 }
                 is ViewState.Failure -> {
-                    Toast.makeText(
-                        this, it.throwable.message,
-                        Toast.LENGTH_LONG
-                    ).show()
+                    showToastLong(this, it.throwable.message.toString(), 5000)
                 }
             }
         }
