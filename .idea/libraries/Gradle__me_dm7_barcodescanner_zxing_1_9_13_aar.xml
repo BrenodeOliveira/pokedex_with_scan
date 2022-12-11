@@ -1,9 +1,13 @@
 <component name="libraryTable">
   <library name="Gradle: me.dm7.barcodescanner:zxing:1.9.13@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f50d98331a9c90e8494e806f8e71c4b4/jetified-zxing-1.9.13/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f50d98331a9c90e8494e806f8e71c4b4/jetified-zxing-1.9.13/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f50d98331a9c90e8494e806f8e71c4b4/jetified-zxing-1.9.13/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/2e68e00ae28b1a3deb7f6f4831ea8491/transformed/jetified-zxing-1.9.13/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/ce6f89fe79edbdf424d012be311f86ee/transformed/jetified-zxing-1.9.13/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/24f782469fe1b059c57a2af57aae5c62/transformed/jetified-zxing-1.9.13/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/8114c050947d2e1a33b3f07fd97de7bd/transformed/jetified-zxing-1.9.13/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/8114c050947d2e1a33b3f07fd97de7bd/transformed/jetified-zxing-1.9.13/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/8114c050947d2e1a33b3f07fd97de7bd/transformed/jetified-zxing-1.9.13/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

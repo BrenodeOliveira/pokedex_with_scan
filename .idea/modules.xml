@@ -3,10 +3,17 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/PokemonWSTemplateV2.iml" filepath="$PROJECT_DIR$/.idea/modules/PokemonWSTemplateV2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Network/PokemonWSTemplateV2.Network.iml" filepath="$PROJECT_DIR$/.idea/modules/Network/PokemonWSTemplateV2.Network.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Network/PokemonWSTemplateV2.Network.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/Network/PokemonWSTemplateV2.Network.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Network/PokemonWSTemplateV2.Network.main.iml" filepath="$PROJECT_DIR$/.idea/modules/Network/PokemonWSTemplateV2.Network.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Network/PokemonWSTemplateV2.Network.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/Network/PokemonWSTemplateV2.Network.unitTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/PokemonWSTemplateV2.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/PokemonWSTemplateV2.app.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/PokemonWSTemplateV2.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/PokemonWSTemplateV2.app.androidTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/PokemonWSTemplateV2.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/PokemonWSTemplateV2.app.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/PokemonWSTemplateV2.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/PokemonWSTemplateV2.app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/pokedex.buildSrc.iml" filepath="$PROJECT_DIR$/.idea/modules/pokedex.buildSrc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/pokedex.buildSrc.main.iml" filepath="$PROJECT_DIR$/.idea/modules/pokedex.buildSrc.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/pokedex.buildSrc.test.iml" filepath="$PROJECT_DIR$/.idea/modules/pokedex.buildSrc.test.iml" />
     </modules>
   </component>
 </project>
